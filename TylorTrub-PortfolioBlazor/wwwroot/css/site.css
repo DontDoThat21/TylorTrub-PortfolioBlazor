@@ -66,3 +66,99 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+footer {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+.nav-seperator {
+    padding-top: 1px;
+    font-size: 24px;
+    font-family: 'Comic Sans MS';
+}
+
+.btn-simon-green {
+    top: 0;
+    left: 0;
+    background-color: green;
+    border-radius: 30px 0px 0px 0px;
+}
+
+.btn-simon-red {
+    top: 0;
+    right: 0;
+    background-color: red;
+    border-radius: 0px 30px 0px 0px;
+}
+
+.btn-simon-orange {
+    bottom: 0;
+    left: 0;
+    background-color: orange;
+    border-radius: 0px 0px 0px 30px;
+}
+
+.btn-simon-cyan {
+    bottom: 0;
+    right: 0;
+    background-color: cyan;
+    border-radius: 0px 0px 30px 0px;
+}
+
+.btn-simon {
+    opacity: .3;
+    position: absolute;
+    border: none;
+    width: 48%;
+    height: 48%;
+    overflow: hidden;
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,1);
+}
+
+    .btn-simon:hover {
+        opacity: 0.7;
+    }
+
+td[colspan="4"] {
+    text-align: center;
+    opacity: .8;
+}
+
+.pull-right {
+    text-align: right;
+    float: right;
+    min-height: 300px;
+    min-width: 300px;
+    max-height: 560px;
+    max-width: 1000px;
+}
+
+.pull-left {
+    text-align: left;
+    float: left;
+    min-height: 300px;
+    min-width: 300px;
+    max-height: 560px;
+    max-width: 1000px;
+}
+
+:hover {
+    transition: 0.6s ease;
+}
+
+.pull-left:hover {
+    min-height: 720px;
+    max-height: 900px;
+    max-width: 1600px;
+}
+
+.pull-right:hover {
+    min-height: 720px;
+    max-height: 900px;
+    max-width: 1600px;
+}
+
+

@@ -2,8 +2,47 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="container text-center">
+    <div class="card">
+        <h3 class="display-4 card-header">Hello, my name is Tylor C. Trub.</h3>
+        <div class="card-body p-4">
 
-Welcome to your new app.
+            <table class="table table-bordered table-striped overflow-hidden">
+                <tbody>
+                    <tr>
+                        <td>
+                            I am a full-stack developer, with a C#.NET back-end focus.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Check out my <a asp-controller="Projects" asp-action="Index">projects</a>, example labs, and examples of my work above.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            I host the majority of my code on <a href="https://github.com/DontDoThat21">GitHub</a>.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Relax and play some <a asp-controller="Games" asp-action="Index">HTML5/CSS3 games</a> I've created.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Available 8am to 5pm EST. <a href="mailto:tylortrub@gmail.com" />tylortrub@gmail.com
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="text-center">
+                <a asp-controller="Home" asp-action="MVCDemo">
+                    Check out my latest MVC .NET 8 (still preview 5/27/23) project!
+                </a>
+            </h2>
+        </div>
+    </div>
+</div>
