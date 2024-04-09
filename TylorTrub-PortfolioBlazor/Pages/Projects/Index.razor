@@ -1,0 +1,15 @@
+﻿@page "/projects/index"
+@inject NavigationManager NavManager
+
+<h3>Projects</h3>
+
+<h1>Landing.</h1>
+
+<p class="btn btn-primary" onclick="@GoHome">Go Home!</p>
+
+@code {
+    protected void GoHome()
+    {
+        NavManager.NavigateTo("/");
+    }
+}

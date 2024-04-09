@@ -1,4 +1,8 @@
-﻿@page "/"
+﻿@page "/home/index"
+@page "/"
+
+@inject NavigationManager NavManager
+@using Microsoft.JSInterop;
 
 <PageTitle>Index</PageTitle>
 
@@ -17,7 +21,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Check out my <a asp-controller="Projects" asp-action="Index">projects</a>, example labs, and examples of my work above.
+                            Check out my <a class="btn btn-primary" onclick="@NavigateToProjects">projects, example labs, and examples</a> of my work above.
                         </td>
                     </tr>
                     <tr>
@@ -46,3 +50,10 @@
         </div>
     </div>
 </div>
+
+@code {
+    protected void NavigateToProjects()
+    {
+        NavManager.NavigateTo("projects");
+    }
+}
