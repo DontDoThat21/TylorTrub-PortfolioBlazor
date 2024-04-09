@@ -1,3 +1,5 @@
+using System;
+
 namespace TylorTrub_PortfolioBlazor.Data
 {
     public class WeatherForecast
