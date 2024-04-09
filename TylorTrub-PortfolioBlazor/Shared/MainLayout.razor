@@ -8,37 +8,160 @@
     </div> *@
 
     <main>
-        <div class="top-row px-4">
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
+                <div class="container-fluid">
+                    <NavLink href="/" class="navbar-brand" Match="NavLinkMatch.All">Tylor Trub's Portfolio</NavLink>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                            <li class="nav-seperator">
+                                |
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Projects
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <NavLink class="nav-link">All Projects</NavLink>
+                                    </li>
+                                    <li class="nav-item">
+                                        <NavLink class="nav-link" href="projects/MauiTodos">.NET Maui Todo List</NavLink>
+                                    </li>                         
+                                    <li class="nav-item">         
+                                        <NavLink class="nav-link" href="projects/AngularEmployeeManager">Angular 16 Employee Manager</NavLink>
+                                    </li>                         
+                                    <li class="nav-item">         
+                                        <NavLink class="nav-link" href="projects/AngularAPI">.NET FW Angular API</NavLink>
+                                    </li>                         
+                                    <li class="nav-item">         
+                                        <NavLink class="nav-link" href="projects/HotSBot">HotS OCR Bot</NavLink>
+                                    </li>                         
+                                    <li class="nav-item">         
+                                        <NavLink class="nav-link" href="projects/PythonMaze">Python Maze</NavLink>
+                                    </li>                         
+                                    <li class="nav-item">         
+                                        <NavLink class="nav-link" href="projects/JavaSystemLocker">Java System Locker</NavLink>
+                                    </li>                         
+                                    <li class="nav-item">         
+                                        <NavLink class="nav-link" href="projects/WinFormsTodos">Win Forms Todos</NavLink>
+                                    </li>                         
+                                    <li class="nav-item">         
+                                        <NavLink class="nav-link" href="projects/ModernDesignPizzaStore">WPF Pizza Store</NavLink>
+                                    </li>                         
+                                    <li class="nav-item">         
+                                        <NavLink class="nav-link" href="projects/FlickrPhotoSearcher">Flickr Photo Searcher</NavLink>
+                                    </li>
+                                    <li class="nav-item">
+                                        <NavLink class="nav-link" href="projects/FrameworkWebForms">Student Registration w/ Web Forms</NavLink>
+                                    </li>
+                                    <li class="nav-item">
+                                        <NavLink class="nav-link" href="projects/CppCalculator">C++ WinForms Calculator</NavLink>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-seperator">
+                                |
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Motorcycles
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <NavLink class="nav-link" href="motorcycles/index">Motorcycles</NavLink>
+                                    </li>
+                                    <li class="nav-item">
+                                        <NavLink class="nav-link" href="motorcycles/store">Store</NavLink>
+                                    </li>
+                                </ul>
+                            </li>
+                            @* @if(User.IsInRole(SD.Role_Admin))
+                            { *@
+                            <li class="nav-seperator">
+                                |
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Books
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <NavLink class="nav-link" href="categories/index">Book Categories</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink class="nav-link" href="products/index">Products</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink class="nav-link" href="companies/index">Companies</NavLink>
+                                    </li>
+                                </ul>
+                            </li>
+                            @* } *@
+                            <li class="nav-seperator">
+                                |
+                            </li>
+                            <li>
+                                <NavLink class="nav-link" href="orders/index">Manage Orders</NavLink>
+                            </li>
+                            <li class="nav-seperator">
+                                |
+                            </li>
+                            @*@if (HttpContextAccessor.HttpContext.Session.GetInt32(SD.SessionCart) != null)
+                                {*@
+                            <li class="nav-item">
+                                <NavLink class="nav-link" href="carts/index">
+                                    <i class="bi bi-cart" style="color=red;">B</i> &nbsp;
+                                    @*(@HttpContextAccessor.HttpContext.Session.GetInt32(SD.SessionCart))*@
+                                </NavLink>
+                            </li>
+                            @* }
+                            else
+                            {*@
+                            <li class="nav-item">
+                                <NavLink class="nav-link" href="carts/index">
+                                    <i class="bi bi-cart" style="color=red;">T</i> &nbsp;
+                                </NavLink>
+                            </li>
+                            @* } *@
 
-            <NavLink href="/" Match="NavLinkMatch.All">tyest?</NavLink>
-
-            <a href="/" target="_blank">Home</a>
-            <div class="nav-seperator">
-                |
-            </div>
-            <a href="/projects" target="_blank">Projects</a>
-            <div class="nav-seperator">
-                |
-            </div>
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">Motorcycles</a>
-            <div class="nav-seperator">
-                |
-            </div>
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">Books</a>
-            <div class="nav-seperator">
-                |
-            </div>
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">Manage Order</a>
-            <div class="nav-seperator">
-                |
-            </div>
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">Cart</a>
-            <div class="nav-seperator">
-                |
-            </div>
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">Privacy</a>
-
-        </div>        
+                            <li class="nav-seperator">
+                                |
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Games
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <NavLink class="nav-link" href="games/index">Games</NavLink>
+                                    </li>
+                                    <li class="nav-item">
+                                        <NavLink class="nav-link" href="games/hangman">Hangman</NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink class="nav-link" href="games/simonsays">Simon Says</NavLink>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-seperator">
+                                |
+                            </li>
+                            <li class="nav-item">
+                                <NavLink class="nav-link" href="home/privacy">Privacy</NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>    
 
         <article class="content px-4">
             @Body

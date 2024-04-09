@@ -21,31 +21,31 @@
                     </tr>
                     <tr>
                         <td>
-                            Check out my <a class="btn btn-primary" onclick="@NavigateToProjects">projects, example labs, and examples</a> of my work above.
+                            Check out my <NavLink class="btn btn-primary" href="projects/index">projects, example labs, and examples</NavLink> of my work above.
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            I host the majority of my code on <a href="https://github.com/DontDoThat21">GitHub</a>.
+                            I host the majority of my code on <NavLink href="https://github.com/DontDoThat21">GitHub</NavLink>.
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Relax and play some <a asp-controller="Games" asp-action="Index">HTML5/CSS3 games</a> I've created.
+                            Relax and play some <NavLink href="games/index">HTML5/CSS3 games</NavLink> I've created.
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Available 8am to 5pm EST. <a href="mailto:tylortrub@gmail.com" />tylortrub@gmail.com
+                            Available 8am to 5pm EST. <a href="mailto:tylortrub@gmail.com">tylortrub@gmail.com</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
 
             <h2 class="text-center">
-                <a asp-controller="Home" asp-action="MVCDemo">
-                    Check out my latest MVC .NET 8 (still preview 5/27/23) project!
-                </a>
+                <NavLink href="/home/blazordemo">
+                    Check out my latest Blazor .NET 8 (developed 4/10/24) project!
+                </NavLink>
             </h2>
         </div>
     </div>
