@@ -1,12 +1,21 @@
 ﻿@page "/home/index"
 @page "/"
+@using TylorTrub_PortfolioBlazor.DataAccess.Data
+@using System.Configuration
 
 @inject NavigationManager NavManager
+@inject PortfolioDBContext DbContext
 
 <PageTitle>Index</PageTitle>
 
+@code { int ResultCount = 0; }
+
 <div class="container text-center">
+
+    <p>testing: @ResultCount</p>
+
     <div class="card">
+
         <h3 class="display-4 card-header">Hello, my name is Tylor C. Trub.</h3>
         <div class="card-body p-4">
 
@@ -46,7 +55,7 @@
                     Check out my latest Blazor .NET 9 (developed 4/10/24) project!
                 </NavLink>
             </h2>
-        </div>
+        </div>        
     </div>
 </div>
 
@@ -54,5 +63,17 @@
     protected void NavigateToProjects()
     {
         NavManager.NavigateTo("projects");
+    }
+
+    Task GetDbTestResult()
+    {
+
+        return Task.CompletedTask;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        int count = DbContext.Motorcycles.Count();
+        ResultCount = count;
     }
 }

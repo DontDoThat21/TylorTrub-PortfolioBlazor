@@ -11,7 +11,7 @@ namespace TylorTrub_PortfolioBlazor
 {
     public class Program()
     {
-        public static IConfiguration Configuration { get; }
+        public static IConfiguration Configuration { get; set; }
 
         public static async Task Main(string[] args)
         {
@@ -22,7 +22,7 @@ namespace TylorTrub_PortfolioBlazor
             builder.Services.AddServerSideBlazor();
             builder.Services.AddSingleton<WeatherForecastService>();
             builder.Services.AddDbContext<PortfolioDBContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             
             var app = builder.Build();
             
