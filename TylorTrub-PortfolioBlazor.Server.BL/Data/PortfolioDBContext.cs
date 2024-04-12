@@ -3,12 +3,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
-using TylorTrubPortfolio.DTO;
+using TylorTrubPortfolio.DTO.Models;
+using TylorTrubPortfolioBlazor.DTO.Models;
 
-namespace TylorTrubPortfolioBlazor.DataAccess.Data
+namespace TylorTrubPortfolioBlazor.Server.BL.Data
 {
     public class PortfolioDBContext : DbContext
     {

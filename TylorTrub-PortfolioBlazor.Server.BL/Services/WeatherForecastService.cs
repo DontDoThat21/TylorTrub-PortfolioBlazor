@@ -1,8 +1,9 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using TylorTrubPortfolioBlazor.DTO.Models;
 
-namespace TylorTrubPortfolioBlazor.Data
+namespace TylorTrubPortfolioBlazor.Server.BL.Services
 {
     public class WeatherForecastService
     {

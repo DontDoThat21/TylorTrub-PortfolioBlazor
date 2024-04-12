@@ -4,8 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Threading.Tasks;
-using TylorTrubPortfolioBlazor.Data;
-using TylorTrubPortfolioBlazor.DataAccess.Data;
+using TylorTrubPortfolioBlazor.Server.BL.Data;
+using TylorTrubPortfolioBlazor.Server.BL.Services;
 
 namespace TylorTrubPortfolioBlazor
 {

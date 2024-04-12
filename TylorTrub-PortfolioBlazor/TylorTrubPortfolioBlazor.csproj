@@ -15,4 +15,8 @@
     <ProjectReference Include="..\TylorTrub-PortfolioBlazor.Server.BL\TylorTrubPortfolioBlazor.Server.BL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>
