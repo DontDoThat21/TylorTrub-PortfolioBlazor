@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TylorTrub-PortfolioBlazor.Server.BL\TylorTrub-PortfolioBlazor.Server.BL.csproj" />
+    <ProjectReference Include="..\TylorTrub-PortfolioBlazor.Server.BL\TylorTrubPortfolioBlazor.Server.BL.csproj" />
   </ItemGroup>
 
 </Project>
