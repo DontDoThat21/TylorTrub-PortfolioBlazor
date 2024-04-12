@@ -1,6 +1,6 @@
 using System;
 
-namespace TylorTrub_PortfolioBlazor.Data
+namespace TylorTrubPortfolioBlazor.Data
 {
     public class WeatherForecast
     {

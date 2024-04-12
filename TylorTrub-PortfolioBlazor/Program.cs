@@ -4,10 +4,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Threading.Tasks;
-using TylorTrub_PortfolioBlazor.Data;
-using TylorTrub_PortfolioBlazor.DataAccess.Data;
+using TylorTrubPortfolioBlazor.Data;
+using TylorTrubPortfolioBlazor.DataAccess.Data;
 
-namespace TylorTrub_PortfolioBlazor
+namespace TylorTrubPortfolioBlazor
 {
     public class Program()
     {

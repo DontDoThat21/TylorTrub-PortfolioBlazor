@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TylorTrubPortfolio.DTO;
 
-namespace TylorTrub_PortfolioBlazor.DataAccess.Data
+namespace TylorTrubPortfolioBlazor.DataAccess.Data
 {
     public class PortfolioDBContext : DbContext
     {

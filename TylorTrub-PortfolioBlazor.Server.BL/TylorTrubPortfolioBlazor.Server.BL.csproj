@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\DontDoThat21\TylorTrub-Portfolio\TylorPortfolio.DTO\TylorTrubPortfolio.DTO.csproj" />
+    <ProjectReference Include="..\..\TylorTrub-Portfolio\TylorPortfolio.DTO\TylorTrubPortfolio.DTO.csproj" />
   </ItemGroup>
 
 </Project>
