@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorTrubPortfolioBlazor", "TylorTrub-PortfolioBlazor\TylorTrubPortfolioBlazor.csproj", "{DBB6F36F-391E-4972-8BC5-60C717097F2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorTrubPortfolioBlazor.UI", "TylorTrub-PortfolioBlazor\TylorTrubPortfolioBlazor.UI.csproj", "{DBB6F36F-391E-4972-8BC5-60C717097F2F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TylorTrubPortfolioBlazor.Client.BL", "TylorTrub-PortfolioBlazor.Client.BL\TylorTrubPortfolioBlazor.Client.BL.csproj", "{75AF0633-CA8E-4311-8028-F639CE4CCBC0}"
 EndProject
