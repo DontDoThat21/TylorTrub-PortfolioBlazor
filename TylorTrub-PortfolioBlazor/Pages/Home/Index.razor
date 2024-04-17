@@ -3,6 +3,7 @@
 @using System.Configuration
 @using TylorTrubPortfolio.DTO.Models
 @using TylorTrubPortfolioBlazor.Server.BL.Services
+@using TylorTrubPortfolioBlazor.UI.Components.BodyComponents
 @using TylorTrubPortfolioBlazor.UI.Components.ModelComponents
 
 @inject NavigationManager NavManager
@@ -14,56 +15,7 @@
 
 }
 
-<div class="container text-center">
-
-    <div class="card">
-
-        <h3 class="display-4 card-header">Hello, my name is Tylor C. Trub.</h3>
-        <div class="card-body p-4">
-
-            <table class="table table-bordered table-striped overflow-hidden">
-                <tbody>
-                    <tr>
-                        <td>
-                            I am a full-stack developer, with a C#.NET back-end focus.
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Check out my <NavLink class="btn btn-primary" href="projects/index">projects, example labs, and examples</NavLink> of my work above.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            I host the majority of my code on <NavLink href="https://github.com/DontDoThat21">GitHub</NavLink>.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Relax and play some <NavLink href="games/index">HTML5/CSS3 games</NavLink> I've created.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Available 8am to 5pm EST. <a href="mailto:tylortrub@gmail.com">tylortrub@gmail.com</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2 class="text-center">
-                <NavLink href="/home/blazordemo">
-                    Check out my latest Blazor .NET 9 (developed 4/10/24) project!
-                </NavLink>
-            </h2>
-        </div>        
-    </div>
-</div>
-
-<br />
-<div class="border-bottom" style="height: 5px; width: 100%;"></div>
-<br />
+<HomeIndexBody></HomeIndexBody>
 
 <PortfolioImageComponent pfImages="@pfImageList"/>
 
