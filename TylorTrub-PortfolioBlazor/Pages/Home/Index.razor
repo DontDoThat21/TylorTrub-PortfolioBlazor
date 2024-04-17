@@ -1,18 +1,20 @@
 ﻿@page "/home/index"
 @page "/"
 @using System.Configuration
-@using TylorTrubPortfolioBlazor.Server.BL.Data
+@using TylorTrubPortfolio.DTO.Models
+@using TylorTrubPortfolioBlazor.Server.BL.Services
+@using TylorTrubPortfolioBlazor.UI.Components.ModelComponents
 
 @inject NavigationManager NavManager
-@inject PortfolioDBContext DbContext
+@inject IPortfolioImageService PortfolioImageService
 
 <PageTitle>Index</PageTitle>
 
-@code { int ResultCount = 0; }
+@code {
+
+}
 
 <div class="container text-center">
-
-    <p>testing: @ResultCount</p>
 
     <div class="card">
 
@@ -59,21 +61,18 @@
     </div>
 </div>
 
+<br />
+<div class="border-bottom" style="height: 5px; width: 100%;"></div>
+<br />
+
+<PortfolioImageComponent pfImages="@pfImageList"/>
+
 @code {
-    protected void NavigateToProjects()
-    {
-        NavManager.NavigateTo("projects");
-    }
 
-    Task GetDbTestResult()
-    {
-
-        return Task.CompletedTask;
-    }
+    List<PortfolioImage> pfImageList = new List<PortfolioImage>();
 
     protected override async Task OnInitializedAsync()
     {
-        int count = DbContext.Motorcycles.Count();
-        ResultCount = count;
+        pfImageList = await PortfolioImageService.FetchPortfolioImagesAsync();
     }
 }

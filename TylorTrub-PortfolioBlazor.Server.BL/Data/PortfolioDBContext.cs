@@ -24,7 +24,7 @@ namespace TylorTrubPortfolioBlazor.Server.BL.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Motorcycle> Motorcycles { get; set; }
         public DbSet<MotorcycleVideo> MotorcycleVideos { get; set; }
-        public DbSet<PortfolioImage> PortfolioImageVideos { get; set; }
+        public DbSet<PortfolioImage> PortfolioImages { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
