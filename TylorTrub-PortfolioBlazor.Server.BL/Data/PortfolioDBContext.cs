@@ -602,6 +602,6 @@ namespace TylorTrubPortfolioBlazor.Server.BL.Data
                 });
 
         }
-
+        
     }
 }
