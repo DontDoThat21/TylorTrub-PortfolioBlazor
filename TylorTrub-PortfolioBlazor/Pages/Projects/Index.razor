@@ -1,15 +1,53 @@
 ﻿@page "/projects/index"
+
+@using TylorTrubPortfolio.DTO.Models
+@using TylorTrubPortfolioBlazor.Server.BL.Services
 @inject NavigationManager NavManager
+@inject IProjectService ProjectsService
 
-<h3>Projects</h3>
-
-<h1>Landing.</h1>
-
-<p class="btn btn-primary" onclick="@GoHome">Go Home!</p>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            Project Name
+        </th>
+        <th>
+            Language
+        </th>
+        <th>
+            Project photo
+        </th>
+        <th>
+            GitHub URL
+        </th>
+    </tr>
+    <tbody>
+        @foreach (var project in projectList)
+        {
+            <tr>
+                <td>
+                    @project.Name
+                </td>
+                <td>
+                    @project.Language
+                </td>
+                <td>
+                    <img src="~/Images/project/@project.ProjectPhoto" width="400px" height="300px">
+                </td>
+                <td>
+                    <a>
+                        @project.Url
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
 @code {
-    protected void GoHome()
+    List<Project> projectList = new List<Project>();
+
+    protected override async Task OnInitializedAsync()
     {
-        NavManager.NavigateTo("/");
+        projectList = await ProjectsService.FetchProjectsAsync();
     }
 }

@@ -1,0 +1,42 @@
+﻿@using TylorTrubPortfolio.DTO.Models
+@inject NavigationManager nav
+
+<div class="container">
+    <h1>Motorcycle Store - New and used Bikes</h1>
+
+    <MudSimpleTable id="tblData" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Motorcycle</th>
+                <th>Manufacturer</th>
+                <th>Engine CCs</th>
+                <th>Image</th>
+                <th>Year</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Motorcycle motorcycle in motorcycles)
+            {
+                <tr>
+                    <td>@motorcycle.MotorcycleName</td>
+                    <td>@motorcycle.Manufacturer</td>
+                    <td>@motorcycle.MotorcycleCc</td>
+                    <td>@motorcycle.Picture</td>
+                    <td>@motorcycle.Year</td>
+                    <td><button @onclick="() => RedirectToDetails(motorcycle)">BUY</button></td>
+                </tr>
+            }
+        </tbody>
+    </MudSimpleTable>
+</div>
+
+@code {
+    [Parameter]
+    public List<Motorcycle> motorcycles { get; set; }
+
+    private async Task RedirectToDetails(Motorcycle motorcycle)
+    {
+        nav.NavigateTo($"/motorcycles/details/{motorcycle.Id.ToString()}");
+    }
+}

@@ -1,0 +1,63 @@
+@page "/motorcycles/details/{id}"
+@inject IMotorcyclesService MotorcyclesService
+
+@using TylorTrubPortfolio.DTO.Models
+@using TylorTrubPortfolioBlazor.Server.BL.Services
+
+Note: This page is still under development.
+
+<h1>Motorcycle details:</h1>
+
+@if (motorcycle == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <MudForm>
+        <MudSimpleTable>
+            <tr>
+                <th>
+                    @motorcycle.MotorcycleName
+                </th>
+                <th>
+                    @motorcycle.Torque
+                </th>
+                <th>
+                    @motorcycle.Hp
+                </th>
+                <th>
+                    @motorcycle.EngineStyle
+                </th>
+            </tr>
+        </MudSimpleTable>
+
+        <h1>Motorcycle Selected - You clicked MotorcycleDescription</h1>
+        <img src="MotorcycleImageUri" alt="Motorcycle selection" width="300" height="169" />
+
+        <p>Price: $9,929,999</p>
+        <p>Motorcycle CC's: @motorcycle.MotorcycleCc</p>
+        <p>Manufacturer: @motorcycle.Manufacturer</p>
+        <p>Year: @motorcycle.Year</p>
+        <p>Engine Config: @motorcycle.EngineStyle</p>
+        <p>Torque: @motorcycle.Torque</p>
+        <p>Hp: @motorcycle.Hp</p>
+        <p>Brakes: @motorcycle.Brakes</p>
+
+        <MudButton type="submit">Buy</MudButton>
+
+    </MudForm>
+}
+
+@code {
+    public Motorcycle motorcycle { get; set; }
+
+    [Parameter]
+    public string Id { get; set; }
+
+    protected async override void OnInitialized()
+    {
+        motorcycle = await MotorcyclesService.FetchMotorcycleAsync(int.Parse(Id));
+    }
+
+}

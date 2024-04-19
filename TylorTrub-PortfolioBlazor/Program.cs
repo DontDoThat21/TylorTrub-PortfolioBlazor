@@ -34,6 +34,10 @@ namespace TylorTrubPortfolioBlazor
             builder.Services.AddDbContext<PortfolioDBContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddScoped<IPortfolioImageService, PortfolioImageService>();
+            builder.Services.AddScoped<IProjectService, ProjectService>();
+            builder.Services.AddScoped<IMotorcycleVideosService, MotorcycleVideosService>();
+            builder.Services.AddScoped<IMotorcyclesService, MotorcyclesService>();
+
             builder.Services.AddRazorComponents().AddInteractiveServerComponents();
             builder.Services.AddCascadingAuthenticationState();
             builder.Services.AddMudBlazorDialog()

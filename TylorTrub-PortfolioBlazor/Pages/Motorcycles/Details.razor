@@ -1,7 +1,15 @@
 ﻿@page "/motorcycles/details"
+@using TylorTrubPortfolio.DTO.Models
+@using TylorTrubPortfolioBlazor.Server.BL.Services
+@inject IMotorcyclesService MotorcyclesService
 
-<h3>Details</h3>
+<MotorcyclesDetailsBody motorcycles="@motorcycle"/>
 
 @code {
+    Motorcycle motorcycle = new Motorcycle();
 
+    protected override async Task OnInitializedAsync()
+    {
+        motorcycle = await MotorcyclesService.FetchMotorcycleAsync(motorcycle.Id);
+    }
 }
