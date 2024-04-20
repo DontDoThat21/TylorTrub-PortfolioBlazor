@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TylorTrubPortfolio.DTO.Models;
+using TylorTrubPortfolioBlazor.DTO.Models;
 using TylorTrubPortfolioBlazor.Server.BL.Data;
 
 namespace TylorTrubPortfolioBlazor.Server.BL.Services

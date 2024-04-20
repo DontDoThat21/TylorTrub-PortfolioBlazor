@@ -7,7 +7,7 @@ using System.Net.NetworkInformation;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
-using TylorTrubPortfolio.DTO.Models;
+using TylorTrubPortfolioBlazor.DTO.Models;
 using TylorTrubPortfolioBlazor.DTO.Models;
 
 namespace TylorTrubPortfolioBlazor.Server.BL.Data

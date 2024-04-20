@@ -1,4 +1,4 @@
-﻿using TylorTrubPortfolio.DTO.Models;
+﻿using TylorTrubPortfolioBlazor.DTO.Models;
 
 namespace TylorTrubPortfolioBlazor.Server.BL.Services
 {
