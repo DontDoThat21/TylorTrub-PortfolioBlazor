@@ -1,4 +1,4 @@
-﻿@using TylorTrubPortfolio.DTO.Models
+﻿@using TylorTrubPortfolioBlazor.DTO.Models
 @inject NavigationManager nav
 
 <div class="container">
@@ -22,9 +22,9 @@
                     <td>@motorcycle.MotorcycleName</td>
                     <td>@motorcycle.Manufacturer</td>
                     <td>@motorcycle.MotorcycleCc</td>
-                    <td>@motorcycle.Picture</td>
+                    <td><img src="Images/Home/Motorcycle/@motorcycle.Picture" width="356px" height="200px" class="border-0 rounded" @onclick="() => RedirectToDetails(motorcycle)" /></td>
                     <td>@motorcycle.Year</td>
-                    <td><button @onclick="() => RedirectToDetails(motorcycle)">BUY</button></td>
+                    <td><MudButton Style="background: orange;" @onclick="() => RedirectToDetails(motorcycle)">BUY</MudButton></td>
                 </tr>
             }
         </tbody>

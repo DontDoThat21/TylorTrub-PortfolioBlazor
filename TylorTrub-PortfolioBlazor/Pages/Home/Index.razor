@@ -1,7 +1,7 @@
 ﻿@page "/home/index"
 @page "/"
 @using System.Configuration
-@using TylorTrubPortfolio.DTO.Models
+@using TylorTrubPortfolioBlazor.DTO.Models
 @using TylorTrubPortfolioBlazor.Server.BL.Services
 @using TylorTrubPortfolioBlazor.UI.Components.BodyComponents
 @using TylorTrubPortfolioBlazor.UI.Components.ModelComponents
@@ -9,11 +9,12 @@
 @inject NavigationManager NavManager
 @inject IPortfolioImageService PortfolioImageService
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Portfolio</PageTitle>
 
 <HomeIndexBody></HomeIndexBody>
-
-<PortfolioImageComponent pfImages="@pfImageList"/>
+<div style="padding: 10px">
+    <PortfolioImageComponent pfImages="@pfImageList" />
+</div>
 
 @code {
 

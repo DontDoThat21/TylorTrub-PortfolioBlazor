@@ -1,6 +1,6 @@
 ﻿@page "/projects/index"
 
-@using TylorTrubPortfolio.DTO.Models
+@using TylorTrubPortfolioBlazor.DTO.Models
 @using TylorTrubPortfolioBlazor.Server.BL.Services
 @inject NavigationManager NavManager
 @inject IProjectService ProjectsService
@@ -25,17 +25,17 @@
         {
             <tr>
                 <td>
-                    @project.Name
+                    <a class="btn btn-primary" href="/Projects/@project.Name.ToString().Replace(" ", "")">@project.Name</a>
                 </td>
                 <td>
                     @project.Language
                 </td>
                 <td>
-                    <img src="~/Images/project/@project.ProjectPhoto" width="400px" height="300px">
+                    <a class="btn btn-primary" href="/Projects/@project.Name.ToString().Replace(" ", "")"><img src="/Images/project/@project.ProjectPhoto" width="400px" height="300px" /></a>
                 </td>
                 <td>
                     <a>
-                        @project.Url
+                        <a href="@project.Url">@project.Url</a>
                     </a>
                 </td>
             </tr>
