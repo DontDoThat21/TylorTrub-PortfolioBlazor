@@ -1,14 +1,10 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MudBlazor;
 using MudBlazor.Services;
-using System.Net.Http.Headers;
-using System;
 using System.Threading.Tasks;
 using TylorTrubPortfolioBlazor.Server.BL.Data;
 using TylorTrubPortfolioBlazor.Server.BL.Services;
@@ -16,6 +12,8 @@ using Toolbelt.Blazor.Extensions.DependencyInjection;
 using Fluxor;
 using System.Reflection;
 using MudExtensions.Services;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
 
 namespace TylorTrubPortfolioBlazor
 {
@@ -30,9 +28,22 @@ namespace TylorTrubPortfolioBlazor
             // Add services to the container.
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
-            builder.Services.AddSingleton<WeatherForecastService>();
+            //builder.Services.AddDbContext<PortfolioDBContext>(options =>
+            //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            // identity db context
+
             builder.Services.AddDbContext<PortfolioDBContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<PortfolioDBContext>().AddDefaultTokenProviders();
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = $"/Identity/Account/Login";
+                options.LogoutPath = $"/Identity/Account/Logout";
+                options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+            });
+
             builder.Services.AddScoped<IPortfolioImageService, PortfolioImageService>();
             builder.Services.AddScoped<IProjectService, ProjectService>();
             builder.Services.AddScoped<IMotorcycleVideosService, MotorcycleVideosService>();

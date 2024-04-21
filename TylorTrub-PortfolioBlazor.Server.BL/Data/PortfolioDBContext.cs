@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 //these will be needed soon.
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using TylorTrubPortfolioBlazor.DTO.Models;
 
 namespace TylorTrubPortfolioBlazor.Server.BL.Data
 {
-    public class PortfolioDBContext : DbContext
+    public class PortfolioDBContext : IdentityDbContext
     {
 
         public PortfolioDBContext(DbContextOptions<PortfolioDBContext> options) : base(options)
