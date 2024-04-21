@@ -1,7 +1,16 @@
 ﻿@page "/companies/index"
+@using TylorTrubPortfolioBlazor.DTO.Models
+@using TylorTrubPortfolioBlazor.Server.BL.Services
+@using TylorTrubPortfolioBlazor.UI.Components.BodyComponents
+@inject ICompaniesService CompaniesService
 
-<h3>Index</h3>
+<CompaniesIndexBody companies="@companies"/>
 
 @code {
+    List<Company> companies = new List<Company>();
 
+    protected override async Task OnInitializedAsync()
+    {
+        companies = await CompaniesService.FetchCompaniesAsync();
+    }
 }

@@ -1,0 +1,46 @@
+@using TylorTrubPortfolioBlazor.DTO.Models
+
+<div class="container">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">
+                Company List
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a class="btn btn-primary"> @* was: asp-controller="Company" asp-action="Upsert" *@
+                <i class="bi bi-plus-circle"></i> Create New Company
+            </a>
+        </div>
+    </div>
+    <MudSimpleTable id="tblData" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Phone Number</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var company in companies)
+            {
+                <tr>
+                    <td>@company.Name</td>
+                    <td>@company.StreetAddress</td>
+                    <td>@company.City</td>
+                    <td>@company.State</td>
+                    <td>@company.PhoneNumber</td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </MudSimpleTable>
+</div>
+
+@code {
+    [Parameter]
+    public List<Company> companies { get; set; }
+}

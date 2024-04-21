@@ -1,9 +1,16 @@
 ﻿@page "/categories/index"
+@using TylorTrubPortfolioBlazor.DTO.Models
+@using TylorTrubPortfolioBlazor.Server.BL.Services
+@using TylorTrubPortfolioBlazor.UI.Components.BodyComponents
+@inject ICategoriesService CategoriesService
 
-<h3>Index</h3>
-
-<p>category index test</p>
+<CategoriesIndexBody categories="@categories"/>
 
 @code {
+    List<Category> categories = new List<Category>();
 
+    protected override async Task OnInitializedAsync()
+    {
+        categories = await CategoriesService.FetchCategoriesAsync();
+    }
 }
