@@ -1,7 +1,16 @@
 ﻿@page "/product/index"
+@using TylorTrubPortfolioBlazor.Server.BL.Services
+@using TylorTrubPortfolioBlazor.DTO.Models
+@using TylorTrubPortfolioBlazor.UI.Components.BodyComponents
+@inject IProductsService ProductsService
 
-<h3>Index</h3>
+<ProductsIndexBody products="@products"/>
 
 @code {
+    List<Product> products = new List<Product>();
 
+    protected override async Task OnInitializedAsync()
+    {
+        products = await ProductsService.FetchProductsAsync();
+    }
 }

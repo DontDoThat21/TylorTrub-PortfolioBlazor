@@ -1,0 +1,45 @@
+@using TylorTrubPortfolioBlazor.DTO.Models
+<div class="container">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">
+                Product List
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a class="btn btn-primary"> @* was: asp-controller="Product" asp-action="Upsert" *@
+                <i class="bi bi-plus-circle"></i> Create New Product
+            </a>
+        </div>
+    </div>
+    <MudSimpleTable id="tblData" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>ISBN</th>
+                <th>Price</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr>
+                    <th>@product.Title</th>
+                    <th>@product.ISBN</th>
+                    <th>@product.Price</th>
+                    <th>@product.Author</th>
+                    <th>@product.Category.Name</th>
+                    <th></th>
+                </tr>
+            }            
+        </tbody>
+    </MudSimpleTable>
+</div>
+
+@code {
+    [Parameter]
+    public List<Product> products { get; set; }
+}
