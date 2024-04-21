@@ -37,6 +37,10 @@ namespace TylorTrubPortfolioBlazor
             builder.Services.AddScoped<IProjectService, ProjectService>();
             builder.Services.AddScoped<IMotorcycleVideosService, MotorcycleVideosService>();
             builder.Services.AddScoped<IMotorcyclesService, MotorcyclesService>();
+            builder.Services.AddScoped<IProductsService, ProductsService>();
+            builder.Services.AddScoped<IGamesService, GamesService>();
+            builder.Services.AddScoped<ICompaniesService, CompaniesService>();
+            builder.Services.AddScoped<ICategoriesService, CategoriesService>();
 
             builder.Services.AddRazorComponents().AddInteractiveServerComponents();
             builder.Services.AddCascadingAuthenticationState();
