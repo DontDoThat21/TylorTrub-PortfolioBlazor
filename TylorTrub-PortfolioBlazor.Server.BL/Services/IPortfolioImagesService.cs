@@ -7,7 +7,7 @@ using TylorTrubPortfolioBlazor.DTO.Models;
 
 namespace TylorTrubPortfolioBlazor.Server.BL.Services
 {
-    public interface IPortfolioImageService
+    public interface IPortfolioImagesService : IService<PortfolioImage>
     {
         Task<List<PortfolioImage>> FetchPortfolioImagesAsync();
     }

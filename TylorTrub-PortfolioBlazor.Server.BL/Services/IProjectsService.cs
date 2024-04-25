@@ -2,8 +2,8 @@
 
 namespace TylorTrubPortfolioBlazor.Server.BL.Services
 {
-    public interface ICompaniesService : IService<Company>
+    public interface IProjectsService : IService<Project>
     {
-        Task<List<Company>> FetchCompaniesAsync();
+        Task<List<Project>> FetchProjectsAsync();
     }
 }

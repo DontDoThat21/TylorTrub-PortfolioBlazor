@@ -1,17 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using System.Security.Claims;
+using TylorTrubPortfolio.Server.BL.Repository;
 using TylorTrubPortfolioBlazor.DTO.Models;
 using TylorTrubPortfolioBlazor.DTO.ViewModels;
 using TylorTrubPortfolioBlazor.Server.BL.Data;
 
 namespace TylorTrubPortfolioBlazor.Server.BL.Services
 {
-    public class CartsService : ICartsService
+    public class CartsService : Service<ShoppingCartBundle>, ICartsService
     {
         private readonly PortfolioDBContext dbContext;
 
-        public CartsService(PortfolioDBContext dBContext)
+        public CartsService(PortfolioDBContext dBContext) : base(dBContext)
         {
             this.dbContext = dBContext;
         }

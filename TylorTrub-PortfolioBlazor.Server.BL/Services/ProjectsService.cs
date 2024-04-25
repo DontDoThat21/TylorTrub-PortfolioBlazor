@@ -1,14 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TylorTrubPortfolio.Server.BL.Repository;
 using TylorTrubPortfolioBlazor.DTO.Models;
 using TylorTrubPortfolioBlazor.Server.BL.Data;
 
 namespace TylorTrubPortfolioBlazor.Server.BL.Services
 {
-    public class ProjectService : IProjectService
+    public class ProjectsService : Service<Project>, IProjectsService
     {
         private readonly PortfolioDBContext dbContext;
 
-        public ProjectService(PortfolioDBContext dBContext)
+        public ProjectsService(PortfolioDBContext dBContext) : base(dBContext)
         {
             this.dbContext = dBContext;
         }

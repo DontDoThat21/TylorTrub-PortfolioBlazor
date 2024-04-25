@@ -2,9 +2,9 @@
 
 namespace TylorTrubPortfolioBlazor.Server.BL.Services
 {
-    public interface IProductsService
+    public interface IProductsService : IService<Product>
     {
         Task<List<Product>> FetchProductsAsync();
-        Task<Product> FetchProductsAsync(int productId);
+        Task<Product> FetchProductAsync(int productId);
     }
 }

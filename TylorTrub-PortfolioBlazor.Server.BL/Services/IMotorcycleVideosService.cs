@@ -7,7 +7,7 @@ using TylorTrubPortfolioBlazor.DTO.Models;
 
 namespace TylorTrubPortfolioBlazor.Server.BL.Services
 {
-    public interface IMotorcycleVideosService
+    public interface IMotorcycleVideosService : IService<MotorcycleVideo>
     {
         Task<List<MotorcycleVideo>> FetchMotorcycleVideosAsync();
     }

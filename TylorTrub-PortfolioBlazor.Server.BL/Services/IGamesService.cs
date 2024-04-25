@@ -2,7 +2,7 @@
 
 namespace TylorTrubPortfolioBlazor.Server.BL.Services
 {
-    public interface IGamesService
+    public interface IGamesService : IService<Game>
     {
         Task<List<Game>> FetchGamesAsync();
     }
