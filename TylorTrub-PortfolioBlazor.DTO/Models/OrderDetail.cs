@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+﻿//using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,14 +15,14 @@ namespace TylorTrubPortfolioBlazor.DTO.Models
         [Required]
         public int OrderHeaderId { get; set; }
         [ForeignKey("OrderHeaderId")]
-        [ValidateNever]
+        //[ValidateNever]
         public OrderHeader OrderHeader { get; set; }
 
 
         [Required]
         public int ProductId { get; set; }
         [ForeignKey("ProductId")]
-        [ValidateNever]
+        //[ValidateNever]
         public Product Product { get; set; }
 
         public int Count { get; set; }

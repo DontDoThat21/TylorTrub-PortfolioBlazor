@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+//using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -21,7 +21,7 @@ namespace TylorTrubPortfolioBlazor.DTO.Models
         public string? PostalCode { get; set;}
         public int? CompanyId { get; set;}
         [ForeignKey("CompanyId")]
-        [ValidateNever]
+        //[ValidateNever]
         public Company Company { get; set; }
     }
 }
