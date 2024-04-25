@@ -14,6 +14,7 @@ using System.Reflection;
 using MudExtensions.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Fluxor.Blazor.Web.ReduxDevTools;
 
 namespace TylorTrubPortfolioBlazor
 {
@@ -27,14 +28,14 @@ namespace TylorTrubPortfolioBlazor
             
             // Add services to the container.
             builder.Services.AddRazorPages();
-            builder.Services.AddServerSideBlazor();
+            builder.Services.AddServerSideBlazor();           
+
             //builder.Services.AddDbContext<PortfolioDBContext>(options =>
-            //options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            //  options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            // identity db context
-
+            // new identity db context
             builder.Services.AddDbContext<PortfolioDBContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<PortfolioDBContext>().AddDefaultTokenProviders();
             builder.Services.ConfigureApplicationCookie(options =>
@@ -44,14 +45,17 @@ namespace TylorTrubPortfolioBlazor
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
             });
 
-            builder.Services.AddScoped<IPortfolioImageService, PortfolioImageService>();
-            builder.Services.AddScoped<IProjectService, ProjectService>();
+            builder.Services.AddScoped<IPortfolioImagesService, PortfolioImagesService>();
+            builder.Services.AddScoped<IProjectsService, ProjectsService>();
             builder.Services.AddScoped<IMotorcycleVideosService, MotorcycleVideosService>();
             builder.Services.AddScoped<IMotorcyclesService, MotorcyclesService>();
             builder.Services.AddScoped<IProductsService, ProductsService>();
             builder.Services.AddScoped<IGamesService, GamesService>();
             builder.Services.AddScoped<ICompaniesService, CompaniesService>();
             builder.Services.AddScoped<ICategoriesService, CategoriesService>();
+
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<TylorTrubPortfolio.Client.BL.IEmailSender, TylorTrubPortfolio.Client.BL.EmailSender>();
 
             builder.Services.AddRazorComponents().AddInteractiveServerComponents();
             builder.Services.AddCascadingAuthenticationState();
