@@ -602,6 +602,16 @@ namespace TylorTrubPortfolioBlazor.Server.BL.Data
                     ProjectPhoto = "cppCalculator.png"
                 });
 
+            modelBuilder.Entity<Project>().HasData(
+                new Project
+                {
+                    Id = 11,
+                    Name = "BookOfGrudges",
+                    Language = "C# MVC and JS",
+                    Url = "https://github.com/DontDoThat21/WIP",
+                    ProjectPhoto = "b.png"
+                });
+
         }
         
     }
