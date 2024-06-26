@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace TylorTrubPortfolioBlazor.DTO.Models
 {
-    public class ApplicationUser:IdentityUser 
+    public class ApplicationUser : IdentityUser 
     {
 
         [Required]
