@@ -4,9 +4,13 @@
 @using System.Security.Claims
 @using System.Text
 @using System.Text.Encodings.Web
+@using Microsoft.AspNetCore.Http
 @using Microsoft.AspNetCore.Identity
 @using Microsoft.AspNetCore.WebUtilities
 @using System.Threading
+@using Microsoft.Extensions.Logging
+@using TylorTrubPortfolioBlazor.Components.Account
+@using TylorTrubPortfolioBlazor.DTO.Models
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager

@@ -95,11 +95,13 @@ namespace TylorTrubPortfolioBlazor.Components.Account
 
                 if (userId != null && email != null)
                 {
-                    state.PersistAsJson(nameof(UserInfo), new UserInfo
+                    var jsonObject = new
                     {
                         UserId = userId,
-                        Email = email,
-                    });
+                        Email = email
+                    };
+
+                    state.PersistAsJson(nameof(jsonObject), jsonObject);
                 }
             }
         }

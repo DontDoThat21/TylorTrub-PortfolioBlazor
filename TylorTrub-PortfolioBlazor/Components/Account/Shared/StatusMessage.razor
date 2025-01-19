@@ -1,4 +1,6 @@
-﻿@if (!string.IsNullOrEmpty(DisplayMessage))
+﻿@using Microsoft.AspNetCore.Http
+@using TylorTrubPortfolioBlazor.Components.Account
+@if (!string.IsNullOrEmpty(DisplayMessage))
 {
     var statusMessageClass = DisplayMessage.StartsWith("Error") ? "danger" : "success";
     <div class="alert alert-@statusMessageClass" role="alert">
