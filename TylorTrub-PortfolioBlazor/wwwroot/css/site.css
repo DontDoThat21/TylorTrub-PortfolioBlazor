@@ -167,3 +167,11 @@ td[colspan="4"] {
     align-items: center;
     text-align: center;
 }
+
+.ghost-white {
+    color: ghostwhite;
+}
+
+.btn-color {
+    background-color: #11559c;
+}
