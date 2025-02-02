@@ -161,4 +161,9 @@ td[colspan="4"] {
     max-width: 1600px;
 }
 
-
+.centered-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
